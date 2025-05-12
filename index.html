@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+    <title>Tic-Tac-Toe</title>
+</head>
+<body class="dark-mode">
+
+    <!-- Mode Switch -->
+    <div class="switch-container">
+        <label class="switch">
+            <input type="checkbox" id="modeSwitch">
+            <span class="slider"></span>
+        </label>
+    </div>
+
+    <!-- Start Menu -->
+    <div id="startMenu">
+        <h1>Tic-Tac-Toe</h1>
+        <button id="playFriendBtn">Play vs Friend</button>
+        <button id="playAIBtn">Play vs AI</button>
+    </div>
+
+    <!-- Name Form -->
+    <div id="nameForm">
+        <label>Player 1 Name (3 letters): 
+            <input type="text" id="player1Input" maxlength="3" />
+        </label><br />
+        <label>Player 2 Name (3 letters): 
+            <input type="text" id="player2Input" maxlength="3" />
+        </label><br />
+        <button id="startGameBtn">Start Game</button>
+    </div>
+
+    <!-- AI Difficulty Menu -->
+    <div id="aiDifficultyMenu">
+        <button id="easyAiBtn">Easy</button>
+        <button id="normalAiBtn">Normal</button>
+        <button id="hardAiBtn">Hard</button>
+    </div>
+
+    <!-- Game Section -->
+    <div id="game">
+        <!-- Scoreboard -->
+        <div id="scoreboard">
+            <p id="scoreX">Player1 Wins: <span id="X">0</span></p>
+            <p id="scoreO">Player2 Wins: <span id="O">0</span></p>
+            <p id="scoreDraw">Draws: <span id="Draw">0</span></p>
+        </div>
+        
+        <h1>Tic-Tac-Toe</h1>
+
+        <!-- Game Board -->
+        <div class="game-board">
+            <div class="cell first"></div>
+            <div class="cell second"></div>
+            <div class="cell third"></div>
+            <div class="cell fourth"></div>
+            <div class="cell fifth"></div>
+            <div class="cell sixth"></div>
+            <div class="cell seventh"></div>
+            <div class="cell eighth"></div>
+            <div class="cell ninth"></div>
+        </div>
+
+        <!-- Buttons -->
+        <button id="restartButton">Restart</button>
+        <button id="back-button">Back to Menu</button>
+    </div>
+
+</body>
+</html>

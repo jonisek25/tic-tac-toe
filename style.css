@@ -1,0 +1,275 @@
+/* General Body Styling */
+body {
+    font-family: Arial, sans-serif;
+    transition: background-color 0.3s, color 0.3s;
+    background-color: black;
+    color: white;
+}
+
+/* Dark Mode and Light Mode */
+body.dark-mode {
+    background-color: black;
+    color: white;
+}
+
+body.light-mode {
+    background-color: white;
+    color: black;
+}
+
+body.dark-mode button {
+    background-color: transparent;
+    color: white;
+    border: 2px solid white;
+}
+
+body.light-mode button {
+    background-color: transparent;
+    color: black;
+    border: 2px solid black;
+}
+
+body.dark-mode button:hover {
+    background-color: white;
+    color: black;
+}
+
+body.light-mode button:hover {
+    background-color: black;
+    color: white;
+}
+
+/* Dark Mode Cell Styling */
+body.dark-mode .cell {
+    --cell-bg: black;
+    --cell-border: white;
+}
+
+/* Light Mode Cell Styling */
+body.light-mode .cell {
+    --cell-bg: white;
+    --cell-border: black;
+}
+
+/* Name Form Styling for Both Modes */
+body.dark-mode #nameForm {
+    background-color: #3B3B3B;
+    color: white;
+}
+
+body.light-mode #nameForm {
+    background-color: lightgrey;
+    color: black;
+}
+
+body.light-mode #nameForm input {
+    color: black;
+    --nameForm-border: white;
+}
+
+body.dark-mode #nameForm input {
+    color: white;
+    --nameForm-border: black;
+}
+
+/* Game and Layout Styling */
+#game {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+}
+
+#game h1 {
+    padding: 15px;
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+}
+
+.game-board {
+    display: grid;
+    grid-template-columns: repeat(3, 100px); /* 3 columns of 100px each */
+    grid-template-rows: repeat(3, 100px); /* 3 rows of 100px each */
+}
+
+#back-button {
+    display: block;
+}
+
+/* Cells Styling */
+.cell {
+    font-family: 'Poppins', sans-serif;
+    width: 100px;
+    height: 100px;
+    background-color: var(--cell-bg);
+    border: 2px solid var(--cell-border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2em;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* Cell Borders */
+.first, .second, .third {
+    border-top: none;
+}
+
+.seventh, .eighth, .ninth {
+    border-bottom: none;
+}
+
+.fourth, .first, .seventh {
+    border-left: none;
+}
+
+.third, .sixth, .ninth {
+    border-right: none;
+}
+
+/* Winning Cell */
+.winning-cell {
+    background-color: yellow;
+    color: black;
+    font-weight: bold;
+}
+
+/* Restart Button */
+#restartButton {
+    display: none;
+}
+
+/* Button Styling */
+button {
+    padding: 10px 20px;
+    margin-top: 40px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-radius: 5px;
+}
+
+/* Start Menu */
+#startMenu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh; /* full screen height */
+    gap: 20px;
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+}
+
+#startMenu h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+/* AI Difficulty Menu */
+#aiDifficultyMenu {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* vertically centers items */
+}
+
+/* Scoreboard */
+#scoreboard {
+    padding: 5px 15px;
+    text-align: center;
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    font-size: 1.1rem;
+    margin-top: 0px;
+    display: inline-block;
+}
+
+#scoreboard p {
+    margin: 8px 0;
+}
+
+/* Name Form */
+#nameForm {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 15px;
+    gap: 5px;
+    border-radius: 10px;
+    width: 250px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#nameForm button {
+    margin-top: 20px;
+}
+
+#nameForm input {
+    padding: 8px;
+    border: 2px solid var(--nameForm-border);
+    border-radius: 5px;
+    width: 95%;
+    background-color: transparent;
+    text-align: center;
+    font-size: 24px;
+    text-transform: uppercase;
+}
+
+#nameForm input:focus {
+    border-color: gray;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 600px) {
+    #nameForm {
+        width: 70%;
+    }
+}
+
+/* Switch Button Styling */
+.switch-container {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    z-index: 1000;
+}
+
+.switch input {
+    display: none;
+}
+
+.switch .slider {
+    position: relative;
+    display: block;
+    width: 34px;
+    height: 20px;
+    background-color: #ccc;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: 0.4s;
+}
+
+.switch .slider::before {
+    content: "";
+    position: absolute;
+    height: 12px;
+    width: 12px;
+    border-radius: 50%;
+    background-color: #fff;
+    transition: 0.4s;
+    left: 4px;
+    top: 4px;
+}
+
+.switch input:checked + .slider {
+    background-color: #4CAF50;
+}
+
+.switch input:checked + .slider::before {
+    transform: translateX(14px);
+}
